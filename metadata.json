@@ -1,0 +1,7 @@
+{
+  "name": "SREE NIRMAN VENTURES - Luxury Real Estate & Construction Portfolio",
+  "description": "A high-end, premium portfolio showcasing architectural excellence, luxury construction, and real estate development by SREE NIRMAN VENTURES.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
