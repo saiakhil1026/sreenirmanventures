@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { chatWithConcierge } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
+import { CONTACT_EMAIL } from '../constants';
+
 const Concierge: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -42,7 +44,7 @@ const Concierge: React.FC = () => {
           actions: [
             { label: 'Chat on WhatsApp', url: 'https://wa.me/918688637899', type: 'whatsapp' },
             { label: 'Call Directly', url: 'tel:+918688637899', type: 'phone' },
-            { label: 'Send Email', url: 'mailto:sreenirmanventures@gmail.com', type: 'email' }
+            { label: 'Send Email', url: `mailto:${CONTACT_EMAIL}`, type: 'email' }
           ]
         };
         setMessages(prev => [...prev, contactResponse]);
