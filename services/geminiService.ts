@@ -1,7 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
 
 const SYSTEM_INSTRUCTION = `
 You are the AI Concierge for "SREE NIRMAN VENTURES", a world-class luxury construction and real estate visionary. 
@@ -21,7 +21,7 @@ Focus on explaining our expertise in transforming raw land into legacies and she
 export const chatWithConcierge = async (message: string) => {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-1.5-flash',
       contents: message,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,

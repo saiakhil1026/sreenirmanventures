@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
     );
 
-    window.location.href = `mailto:sreenirmanventures@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@sreenirmanventures.com?subject=${subject}&body=${body}`;
   };
 
   const inputClasses = (fieldName: string) => `w-full bg-[#111] border py-4 px-6 text-white font-light placeholder:text-white/20 transition-all duration-500 outline-none
@@ -90,8 +90,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="pt-2">
                     <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-3 font-semibold">Email</p>
-                    <a href="mailto:sreenirmanventures@gmail.com" className="block text-white/90 text-lg font-light tracking-wide hover:text-[#d4af37] transition-colors duration-300 break-all">
-                      sreenirmanventures@gmail.com
+                    <a href="mailto:info@sreenirmanventures.com" className="block text-white/90 text-lg font-light tracking-wide hover:text-[#d4af37] transition-colors duration-300 break-all">
+                      info@sreenirmanventures.com
                     </a>
                   </div>
                 </div>
