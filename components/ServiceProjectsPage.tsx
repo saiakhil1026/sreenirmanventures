@@ -78,7 +78,11 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                         {data.map(project => (
-                            <RealEstateProjectCard key={project.id} project={project} />
+                            <RealEstateProjectCard
+                                key={project.id}
+                                project={project}
+                                variant={(type === 'interior' || type === 'management') ? 'service' : 'project'}
+                            />
                         ))}
                     </div>
                 </div>

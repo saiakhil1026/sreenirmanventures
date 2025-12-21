@@ -5,9 +5,10 @@ import BrochureModal from './BrochureModal';
 
 interface RealEstateProjectCardProps {
     project: Project;
+    variant?: 'project' | 'service';
 }
 
-const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project }) => {
+const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project, variant = 'project' }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -37,16 +38,18 @@ const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project }
 
                 {/* Content */}
                 <div className="p-8 relative">
-                    {/* Map Pin - Links to Location */}
-                    <a
-                        href={project.projectUrl || '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-0 right-0 p-8 opacity-10 hover:opacity-100 transition-opacity duration-300 group/pin"
-                        aria-label={`View location on map for ${project.title}`}
-                    >
-                        <MapPin className="w-24 h-24 text-white group-hover/pin:text-[#d4af37] transition-colors" />
-                    </a>
+                    {/* Map Pin - Links to Location (Only for projects) */}
+                    {variant === 'project' && (
+                        <a
+                            href={project.projectUrl || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute top-0 right-0 p-8 opacity-10 hover:opacity-100 transition-opacity duration-300 group/pin"
+                            aria-label={`View location on map for ${project.title}`}
+                        >
+                            <MapPin className="w-16 h-16 text-white group-hover/pin:text-[#d4af37] transition-colors" />
+                        </a>
+                    )}
 
                     <span className="text-[#d4af37] text-xs uppercase tracking-[0.2em] mb-3 block">
                         {project.category}
@@ -56,10 +59,12 @@ const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project }
                         {project.title}
                     </h3>
 
-                    <div className="flex items-center gap-2 text-white/40 text-sm mb-6">
-                        <MapPin className="w-4 h-4" />
-                        <span className="uppercase tracking-wider">{project.location}</span>
-                    </div>
+                    {variant === 'project' && (
+                        <div className="flex items-center gap-2 text-white/40 text-sm mb-6">
+                            <MapPin className="w-4 h-4" />
+                            <span className="uppercase tracking-wider">{project.location}</span>
+                        </div>
+                    )}
 
                     <p className="text-white/60 text-sm leading-relaxed mb-6 font-light">
                         {project.description}
@@ -67,14 +72,16 @@ const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project }
 
                     <div className="flex justify-between items-center pt-6 border-t border-white/5">
                         <span className="text-white/30 text-xs">Status: <span className="text-white">{project.year}</span></span>
-                        <a
-                            href={project.projectUrl || '#'}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs uppercase tracking-widest text-white hover:text-[#d4af37] transition-colors flex items-center gap-2"
-                        >
-                            View Location <ExternalLink className="w-3 h-3" />
-                        </a>
+                        {variant === 'project' && (
+                            <a
+                                href={project.projectUrl || '#'}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs uppercase tracking-widest text-white hover:text-[#d4af37] transition-colors flex items-center gap-2"
+                            >
+                                View Location <ExternalLink className="w-3 h-3" />
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>
