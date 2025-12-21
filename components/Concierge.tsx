@@ -42,7 +42,7 @@ const Concierge: React.FC = () => {
           actions: [
             { label: 'Chat on WhatsApp', url: 'https://wa.me/918688637899', type: 'whatsapp' },
             { label: 'Call Directly', url: 'tel:+918688637899', type: 'phone' },
-            { label: 'Send Email', url: 'mailto:info@sreenirmanventures.com', type: 'email' }
+            { label: 'Send Email', url: 'mailto:sreenirmanventures@gmail.com', type: 'email' }
           ]
         };
         setMessages(prev => [...prev, contactResponse]);
