@@ -28,6 +28,29 @@ const Concierge: React.FC = () => {
     setInputValue('');
     setIsTyping(true);
 
+    // Intent Detection
+    const lowerInput = inputValue.toLowerCase();
+    const isSalesIntent = ['buy', 'purchase', 'invest', 'price', 'cost', 'quote', 'interested'].some(word => lowerInput.includes(word));
+    const isContactIntent = ['contact', 'call', 'email', 'phone', 'talk', 'speak', 'owner'].some(word => lowerInput.includes(word));
+
+    if (isSalesIntent || isContactIntent) {
+      // Delayed response to simulate typing
+      setTimeout(() => {
+        const contactResponse: ChatMessage = {
+          role: 'assistant',
+          content: "I'd be delighted to assist you with that. To provide you with the most accurate information and personalized service, please connect directly with our sales team via your preferred method below:",
+          actions: [
+            { label: 'Chat on WhatsApp', url: 'https://wa.me/918688637899', type: 'whatsapp' },
+            { label: 'Call Directly', url: 'tel:+918688637899', type: 'phone' },
+            { label: 'Send Email', url: 'mailto:info@sreenirmanventures.com', type: 'email' }
+          ]
+        };
+        setMessages(prev => [...prev, contactResponse]);
+        setIsTyping(false);
+      }, 1000);
+      return;
+    }
+
     const response = await chatWithConcierge(inputValue);
 
     setMessages(prev => [...prev, { role: 'assistant', content: response }]);
@@ -62,10 +85,25 @@ const Concierge: React.FC = () => {
 
         <div className="flex-1 overflow-y-auto p-8 space-y-6">
           {messages.map((msg, i) => (
-            <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-4 text-sm leading-relaxed ${msg.role === 'user' ? 'bg-[#d4af37] text-black' : 'bg-white/5 text-white/90 border border-white/10'}`}>
+            <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+              <div className={`max-w-[85%] p-4 text-sm leading-relaxed mb-2 ${msg.role === 'user' ? 'bg-[#d4af37] text-black' : 'bg-white/5 text-white/90 border border-white/10'}`}>
                 {msg.content}
               </div>
+              {msg.actions && (
+                <div className="flex flex-col gap-2 w-[85%]">
+                  {msg.actions.map((action, idx) => (
+                    <a
+                      key={idx}
+                      href={action.url}
+                      target="_blank" // For external links like WhatsApp/Email
+                      rel="noopener noreferrer"
+                      className="bg-[#111] border border-[#d4af37]/30 hover:bg-[#d4af37] hover:text-black text-[#d4af37] text-xs uppercase tracking-widest py-3 px-4 transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      {action.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
           {isTyping && (

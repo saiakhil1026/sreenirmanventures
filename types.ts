@@ -14,6 +14,11 @@ export interface Project {
 export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
+  actions?: {
+    label: string;
+    url: string;
+    type: 'whatsapp' | 'phone' | 'email';
+  }[];
 }
 
 export enum SectionId {
