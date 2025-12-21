@@ -1,14 +1,20 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import ProjectCard from './components/ProjectCard';
 import Contact from './components/Contact';
 import Concierge from './components/Concierge';
+import WhatsAppButton from './components/WhatsAppButton';
+import ProjectsPage from './components/ProjectsPage';
+import ServiceProjectsPage from './components/ServiceProjectsPage';
 import { Project } from './types';
+import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 
-const SERVICES: Project[] = [
+
+
+const CONSTRUCTION_PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Precision Plots',
@@ -26,7 +32,10 @@ const SERVICES: Project[] = [
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000',
     location: 'Gated Communities',
     year: 'Custom'
-  },
+  }
+];
+
+const PREMIUM_SERVICES: Project[] = [
   {
     id: '3',
     title: 'Interior Curation',
@@ -47,7 +56,20 @@ const SERVICES: Project[] = [
   }
 ];
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <div className="relative min-h-screen">
       <Navbar />
@@ -75,31 +97,59 @@ const App: React.FC = () => {
             <p className="text-white/60 text-lg leading-relaxed font-light">
               Under the visionary leadership of SREE NIRMAN VENTURES, we approach construction as a fine art. Our philosophy is rooted in the belief that space should inspire, protect, and transcend. Every project is a synthesis of cutting-edge technology and timeless elegance.
             </p>
-
           </div>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section id="services" className="py-32 bg-[#0a0a0a] scroll-mt-24">
+      <section className="py-32 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20">
+          <div id="our-projects" className="scroll-mt-32 flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div className="max-w-2xl">
               <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block">Our Expertise</span>
-              <h2 className="text-6xl font-display text-white">Our Premium Services</h2>
+              <h2 className="text-6xl font-display text-white">Projects</h2>
             </div>
             <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
-              Curated selection of our most ambitious developments across the globe, where engineering meets eternity.
+              Curated selection of our most ambitious developments across the globe.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-24">
+            {CONSTRUCTION_PROJECTS.map(project => (
+              <Link
+                to={project.id === '1' ? '/projects/plots' : '/projects/villas'}
+                key={project.id}
+                className="block cursor-pointer"
+              >
+                <ProjectCard project={project} />
+              </Link>
+            ))}
+          </div>
+
+          <div id="our-services" className="scroll-mt-32 flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div className="max-w-2xl">
+              <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block">Exclusive Care</span>
+              <h2 className="text-6xl font-display text-white">Services</h2>
+            </div>
+            <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
+              Comprehensive lifestyle and asset management solutions.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-            {SERVICES.map(project => (
-              <ProjectCard key={project.id} project={project} />
+            {PREMIUM_SERVICES.map(project => (
+              <Link
+                to={project.id === '3' ? '/services/interior' : '/services/management'}
+                key={project.id}
+                className="block cursor-pointer"
+              >
+                <ProjectCard project={project} />
+              </Link>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Contact Section */}
       <Contact />
@@ -118,10 +168,19 @@ const App: React.FC = () => {
               SREE NIRMAN VENTURES
             </div>
           </div>
-          <div className="text-white/30 text-xs uppercase tracking-widest flex space-x-8">
-            <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">LinkedIn</a>
-            <a href="#" className="hover:text-white">Architectural Digest</a>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-white/40 hover:text-white transition-colors duration-300 aria-label='Instagram'">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-white/40 hover:text-white transition-colors duration-300 aria-label='Facebook'">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-white/40 hover:text-white transition-colors duration-300 aria-label='X (Twitter)'">
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-white/40 hover:text-white transition-colors duration-300 aria-label='YouTube'">
+              <Youtube className="w-5 h-5" />
+            </a>
           </div>
           <p className="text-white/20 text-[10px] uppercase tracking-widest">
             © 2024 Sree Nirman Ventures. All Rights Reserved.
@@ -130,8 +189,24 @@ const App: React.FC = () => {
       </footer>
 
       <Concierge />
+      <WhatsAppButton />
     </div>
   );
+}
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/plots" element={<ServiceProjectsPage type="plots" />} />
+        <Route path="/projects/villas" element={<ServiceProjectsPage type="villas" />} />
+        <Route path="/services/interior" element={<ServiceProjectsPage type="interior" />} />
+        <Route path="/services/management" element={<ServiceProjectsPage type="management" />} />
+      </Routes>
+    </Router>
+  )
 };
 
 export default App;

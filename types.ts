@@ -7,6 +7,8 @@ export interface Project {
   imageUrl: string;
   location: string;
   year: string;
+  projectUrl?: string;
+  brochureUrl?: string; // Link to project brochure
 }
 
 export interface ChatMessage {
