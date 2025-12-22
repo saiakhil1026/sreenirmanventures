@@ -47,7 +47,7 @@ const PREMIUM_SERVICES: Project[] = [
   },
   {
     id: '4',
-    title: 'Property Management',
+    title: 'Project Management',
     category: 'Asset Care',
     description: 'A white-glove service ensuring your asset retains its pristine condition and value. From tenant vetting and lease management to preventative maintenance and concierge services, we handle every detail of your real estate portfolio.',
     imageUrl: '/veridian.png',
@@ -95,7 +95,8 @@ const Home: React.FC = () => {
               We Don't Just Build.<br />We <span className="italic">Compose</span>.
             </h2>
             <p className="text-white/60 text-lg leading-relaxed font-light">
-              Under the visionary leadership of SREE NIRMAN VENTURES, we approach construction as a fine art. Our philosophy is rooted in the belief that space should inspire, protect, and transcend. Every project is a synthesis of cutting-edge technology and timeless elegance.
+              Led by a Vision of Excellence, SREE NIRMAN VENTURES,
+              approaches construction as a fine art. Our philosophy is rooted in the belief that the spaces we create should inspire, protect, and transcend. Every project is a synthesis of cutting-edge technology and timeless elegance.
             </p>
           </div>
         </div>

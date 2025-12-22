@@ -33,7 +33,7 @@ const Concierge: React.FC = () => {
     // Intent Detection
     const lowerInput = inputValue.toLowerCase();
     const isSalesIntent = ['buy', 'purchase', 'invest', 'price', 'cost', 'quote', 'interested'].some(word => lowerInput.includes(word));
-    const isContactIntent = ['contact', 'call', 'email', 'phone', 'talk', 'speak', 'owner'].some(word => lowerInput.includes(word));
+    const isContactIntent = ['contact', 'call', 'email', 'phone', 'talk', 'speak', 'owner', 'office', 'reach', 'connect'].some(word => lowerInput.includes(word));
 
     if (isSalesIntent || isContactIntent) {
       // Delayed response to simulate typing
@@ -53,9 +53,20 @@ const Concierge: React.FC = () => {
       return;
     }
 
-    const response = await chatWithConcierge(inputValue);
+    let aiResponse = await chatWithConcierge(inputValue);
+    let messageActions: ChatMessage['actions'] | undefined;
 
-    setMessages(prev => [...prev, { role: 'assistant', content: response }]);
+    // Check for AI-triggered contact options
+    if (aiResponse.includes('[SHOW_CONTACT_OPTIONS]')) {
+      aiResponse = aiResponse.replace('[SHOW_CONTACT_OPTIONS]', '').trim();
+      messageActions = [
+        { label: 'Chat on WhatsApp', url: 'https://wa.me/918688637899', type: 'whatsapp' },
+        { label: 'Call Directly', url: 'tel:+918688637899', type: 'phone' },
+        { label: 'Send Email', url: `mailto:${CONTACT_EMAIL}`, type: 'email' }
+      ];
+    }
+
+    setMessages(prev => [...prev, { role: 'assistant', content: aiResponse, actions: messageActions }]);
     setIsTyping(false);
   };
 
@@ -99,7 +110,7 @@ const Concierge: React.FC = () => {
                       href={action.url}
                       target="_blank" // For external links like WhatsApp/Email
                       rel="noopener noreferrer"
-                      className="bg-[#111] border border-[#d4af37]/30 hover:bg-[#d4af37] hover:text-black text-[#d4af37] text-xs uppercase tracking-widest py-3 px-4 transition-all duration-300 flex items-center justify-center gap-2"
+                      className="bg-[#111] border border-[#d4af37] hover:bg-[#d4af37] hover:text-black text-[#d4af37] text-sm uppercase tracking-widest py-4 px-6 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
                     >
                       {action.label}
                     </a>

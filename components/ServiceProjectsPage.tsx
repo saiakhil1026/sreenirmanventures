@@ -4,6 +4,8 @@ import RealEstateProjectCard from './RealEstateProjectCard';
 import Contact from './Contact';
 import WhatsAppButton from './WhatsAppButton';
 import Concierge from './Concierge';
+import MaterialDetailsModal, { MaterialSpecs } from './MaterialDetailsModal';
+import ManagementTierCard from './ManagementTierCard';
 import { INTERIOR_PROJECTS, MANAGEMENT_PROJECTS, PLOTS_PROJECTS, VILLAS_PROJECTS } from '../data/projects';
 import { Instagram, Facebook, Twitter, Youtube, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -17,6 +19,14 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
         window.scrollTo(0, 0);
     }, [type]);
 
+    const [selectedTier, setSelectedTier] = React.useState<{ title: string; materials: MaterialSpecs } | null>(null);
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+    const handleViewSpecs = (title: string, materials: MaterialSpecs) => {
+        setSelectedTier({ title, materials });
+        setIsModalOpen(true);
+    };
+
     let data;
     let title;
     let subtitle;
@@ -29,8 +39,8 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
             break;
         case 'management':
             data = MANAGEMENT_PROJECTS;
-            title = <>Asset <span className="italic text-[#d4af37]">Stewardship</span></>;
-            subtitle = 'Preserving value through excellence in care.';
+            title = <>Project <span className="italic text-[#d4af37]">Management</span></>;
+            subtitle = 'Comprehensive oversight for your valuable assets.';
             break;
         case 'plots':
             data = PLOTS_PROJECTS;
@@ -76,17 +86,137 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
             {/* Projects Grid */}
             <section className="pb-32 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                        {data.map(project => (
-                            <RealEstateProjectCard
-                                key={project.id}
-                                project={project}
-                                variant={(type === 'interior' || type === 'management') ? 'service' : 'project'}
-                            />
-                        ))}
+                    <div className={type === 'management' ? "w-full" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"}>
+                        {type === 'management' ? (
+                            // Management Tiers Grid
+                            <div className="col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+                                <ManagementTierCard
+                                    title="Basic"
+                                    description="Essential core services"
+                                    features={[
+                                        "Trusted brand Cement and Steel",
+                                        "Standard Floor Tiles",
+                                        "Standard Doors & UPVC Windows",
+                                        "Essential Kitchen & Bathroom Fittings",
+                                        "Basic Emulsion Paint"
+
+                                    ]}
+                                    delay={0}
+                                    materials={{
+                                        cements: ["Hemadri", "Sagar", "Priya"],
+                                        steel: ["Simhadri", "Radha"],
+                                        plumbing: ["Supreme"],
+                                        sanitary: ["Sonet"],
+                                        electrical: {
+                                            wiring: ["Salzer"],
+                                            switches: ["Salzer"]
+                                        },
+                                        paints: ["Asian Paints / Dulux / Berger (Ace & Tractor Quality)"]
+                                    }}
+                                    onSelect={handleViewSpecs}
+                                />
+                                <ManagementTierCard
+                                    title="Economy"
+                                    description="Essential oversight for compact needs"
+                                    features={[
+                                        "Trusted brand Cement and Steel,",
+                                        "Double Charged Floor Tiles",
+                                        "Standard Doors & Tata Windows",
+                                        "Stylish Kitchen & Bathroom Fittings",
+                                        "Economy Emulsion Paint"
+                                    ]}
+                                    delay={100}
+                                    materials={{
+                                        cements: ["Maha", "Deccan", "Chetinadu"],
+                                        steel: ["Simhadri", "Radha"],
+                                        plumbing: ["Supreme"],
+                                        sanitary: ["Sonet", "Cera"],
+                                        electrical: {
+                                            wiring: ["Goldmedal"],
+                                            switches: ["Goldmedal"]
+                                        },
+                                        paints: ["Asian Paints / Dulux / Berger (Ace shyne & Tractor shyne)"]
+                                    }}
+                                    onSelect={handleViewSpecs}
+                                />
+                                <ManagementTierCard
+                                    title="Premium"
+                                    description="Enhanced living experience"
+                                    isPopular={true}
+                                    features={[
+                                        "Prime Quality Cement & Steel",
+                                        "Double Charged Floor Tiles",
+                                        "Standard Doors & Windows (Wood/Aluminium)",
+                                        "Premium Kitchen & Bathroom Fittings",
+                                        "Premium Emulsion Paint"
+
+                                    ]}
+                                    delay={200}
+                                    materials={{
+                                        cements: ["Dalmia", "ACC", "Raasi"],
+                                        steel: ["Vizag"],
+                                        plumbing: ["Astral", "Ashirvad"],
+                                        sanitary: ["Hindware", "Parryware"],
+                                        electrical: {
+                                            wiring: ["Anchor"],
+                                            switches: ["Anchor Roma"]
+                                        },
+                                        paints: ["Asian Paints / Dulux / Berger (Apex & Premium Quality)"]
+                                    }}
+                                    onSelect={handleViewSpecs}
+                                />
+                                <ManagementTierCard
+                                    title="Luxury"
+                                    description="White-glove concierge living"
+                                    features={[
+                                        "Prime Quality Cement & Steel",
+                                        "Double Charged Floor Tiles",
+                                        "Standard Doors & Windows (Teak Wood/Aluminium)",
+                                        "Lavish Kitchen & Bathroom Fittings",
+                                        "Luxury Emulsion Paint"
+
+                                    ]}
+                                    delay={300}
+                                    materials={{
+                                        cements: ["UltraTech"],
+                                        steel: ["Tata"],
+                                        plumbing: ["Astral/Ashirvad", "Jaquar/Kohler"],
+                                        sanitary: ["Astral/Ashirvad", "Jaquar/Kohler"],
+                                        electrical: {
+                                            wiring: ["Polycab", "Finolex"],
+                                            switches: ["Legrand"]
+                                        },
+                                        paints: ["Asian Paints / Dulux / Berger (Ultima & Royale Quality)"]
+                                    }}
+                                    onSelect={handleViewSpecs}
+                                />
+                            </div>
+                        ) : (
+                            // Standard Projects Grid
+                            data.map(project => (
+                                <RealEstateProjectCard
+                                    key={project.id}
+                                    project={project}
+                                    variant={(type === 'interior' || type === 'management') ? 'service' : 'project'}
+                                />
+                            ))
+                        )}
                     </div>
                 </div>
             </section>
+
+            {/* Material Modal */}
+            {selectedTier && (
+                <MaterialDetailsModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    tierTitle={selectedTier.title}
+                    materials={selectedTier.materials}
+                />
+            )}
+
+            {/* Contact Section */}
+            <Contact />
 
             {/* Footer */}
             <footer className="py-12 px-6 bg-black border-t border-white/5">
