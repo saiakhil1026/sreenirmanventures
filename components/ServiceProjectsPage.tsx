@@ -105,8 +105,8 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                                     materials={{
                                         cements: ["Hemadri", "Sagar", "Priya"],
                                         steel: ["Simhadri", "Radha"],
-                                        plumbing: ["Supreme"],
-                                        sanitary: ["Sonet"],
+                                        plumbing: ["Supreme & Sonet"],
+                                        sanitary: ["Supreme & Sonet"],
                                         electrical: {
                                             wiring: ["Salzer"],
                                             switches: ["Salzer"]
@@ -129,8 +129,8 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                                     materials={{
                                         cements: ["Maha", "Deccan", "Chetinadu"],
                                         steel: ["Simhadri", "Radha"],
-                                        plumbing: ["Supreme"],
-                                        sanitary: ["Sonet", "Cera"],
+                                        plumbing: ["Supreme & Sonet/Cera"],
+                                        sanitary: ["Supreme & Sonet / Cera"],
                                         electrical: {
                                             wiring: ["Goldmedal"],
                                             switches: ["Goldmedal"]
@@ -155,8 +155,8 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                                     materials={{
                                         cements: ["Dalmia", "ACC", "Raasi"],
                                         steel: ["Vizag"],
-                                        plumbing: ["Astral", "Ashirvad"],
-                                        sanitary: ["Hindware", "Parryware"],
+                                        plumbing: ["Astral/Ashirvad & Hindware/Parryware"],
+                                        sanitary: ["Astral/Ashirvad & Hindware/Parryware"],
                                         electrical: {
                                             wiring: ["Anchor"],
                                             switches: ["Anchor Roma"]
