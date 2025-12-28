@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mb-8"></div>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-            Ready to turn your vision into reality? Reach out and let's discuss your next project.
+            Ready to turn your vision into reality. Reach out and let's discuss about project.
           </p>
         </div>
 
@@ -126,9 +126,9 @@ const Contact: React.FC = () => {
                 Working Hours
               </h4>
               <ul className="space-y-4 text-white/60 font-light tracking-wide text-sm">
-                <li className="flex justify-between border-b border-white/5 pb-2"><span>Monday - Friday</span> <span className="text-white">9:00 AM - 6:00 PM</span></li>
-                <li className="flex justify-between border-b border-white/5 pb-2"><span>Saturday</span> <span className="text-white">10:00 AM - 4:00 PM</span></li>
-                <li className="flex justify-between"><span>Sunday</span> <span className="text-[#d4af37] italic">By Appointment Only</span></li>
+                <li className="flex justify-between border-b border-white/5 pb-2"><span>Sunday - Saturday</span> <span className="text-white">10:00 AM - 6:00 PM</span></li>
+                {/* <li className="flex justify-between border-b border-white/5 pb-2"><span>Saturday</span> <span className="text-white">10:00 AM - 4:00 PM</span></li> */}
+                <li className="flex justify-between"><span>Tuesday</span> <span className="text-[#d4af37] italic">By Appointment Only</span></li>
               </ul>
             </div>
           </div>
@@ -150,7 +150,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="John Doe"
+                  placeholder="Sree"
                   className={inputClasses('name')}
                 />
               </div>
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    placeholder="john@example.com"
+                    placeholder="sree@example.com"
                     className={inputClasses('email')}
                   />
                 </div>
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <label className={labelClasses}>Project Details</label>
+                <label className={labelClasses}>Message</label>
                 <textarea
                   rows={4}
                   name="message"
@@ -193,7 +193,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Tell us about your architectural vision..."
+                  placeholder="Write your message here..."
                   className={inputClasses('message')}
                 ></textarea>
               </div>

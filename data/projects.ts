@@ -40,58 +40,58 @@ export const PLOTS_PROJECTS: Project[] = [
         id: 'plot1',
         title: 'Emerald Valley',
         category: 'Premium Open Plots',
-        description: 'Sprawling 50-acre plotted development nestled in the green belt. DTCP approved layouts with 60ft landscaped roads and underground cabling.',
+        description: 'Sprawling 6.5-acre plotted development nestled in the green belt. APCRDA approved layouts with 40 & 30ft Roads,Compound Wall , Electrical lines and Water lines .',
         imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
-        location: 'Sadashivpet',
+        location: 'Vinjanampadu',
         year: 'New Launch',
-        projectUrl: 'https://maps.google.com',
+        projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
         brochureUrl: '/brochure-sample.pdf'
     },
-    {
-        id: 'plot2',
-        title: 'Urban Meadows',
-        category: 'Gated Community Plots',
-        description: 'Strategic investment plots located near the upcoming regional ring road. Perfect for generation wealth building with high appreciation potential.',
-        imageUrl: 'https://images.unsplash.com/photo-1629079447841-d60235339f4e?auto=format&fit=crop&q=80&w=1000',
-        location: 'Shankarpally',
-        year: 'Ongoing',
-        projectUrl: 'https://maps.google.com',
-        brochureUrl: '/brochure-sample.pdf'
-    },
-    {
-        id: 'plot3',
-        title: 'Lakeside Reserve',
-        category: 'Villa Plots',
-        description: 'Exclusive lake-view plots designed for luxury villa construction. Creating a serene ecosystem with water bodies and jogging tracks.',
-        imageUrl: 'https://images.unsplash.com/photo-1572986345672-8874d6c40a5a?auto=format&fit=crop&q=80&w=1000',
-        location: 'Mokila',
-        year: 'Sold Out',
-        projectUrl: 'https://maps.google.com'
-    }
+    // {
+    //     id: 'plot2',
+    //     title: 'Urban Meadows',
+    //     category: 'Gated Community Plots',
+    //     description: 'Strategic investment plots located near the upcoming regional ring road. Perfect for generation wealth building with high appreciation potential.',
+    //     imageUrl: 'https://images.unsplash.com/photo-1629079447841-d60235339f4e?auto=format&fit=crop&q=80&w=1000',
+    //     location: 'Shankarpally',
+    //     year: 'Ongoing',
+    //     projectUrl: 'https://maps.google.com',
+    //     brochureUrl: '/brochure-sample.pdf'
+    // },
+    // {
+    //     id: 'plot3',
+    //     title: 'Lakeside Reserve',
+    //     category: 'Villa Plots',
+    //     description: 'Exclusive lake-view plots designed for luxury villa construction. Creating a serene ecosystem with water bodies and jogging tracks.',
+    //     imageUrl: 'https://images.unsplash.com/photo-1572986345672-8874d6c40a5a?auto=format&fit=crop&q=80&w=1000',
+    //     location: 'Mokila',
+    //     year: 'Sold Out',
+    //     projectUrl: 'https://maps.google.com'
+    // }
 ];
 
 export const VILLAS_PROJECTS: Project[] = [
     {
         id: 'villa1',
         title: 'Veridian Estate',
-        category: 'Triplex Villas',
-        description: 'Contemporary triplex villas with private elevators and pools. Designed for those who value privacy, space, and ultra-modern aesthetics.',
+        category: 'Villas',
+        description: 'Contemporary villas. Designed for those who value privacy, space, and ultra-modern aesthetics.',
         imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1000',
-        location: 'West Corridor',
+        location: 'Vinjanampadu',
         year: '2025',
-        projectUrl: 'https://maps.google.com',
+        projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
         brochureUrl: '/brochure-sample.pdf'
     },
-    {
-        id: 'villa2',
-        title: 'The Royal Enclave',
-        category: 'Spanish Villas',
-        description: 'Classic Spanish-style architecture meets modern luxury. Featuring courtyards, arched windows, and terracotta roofs in a lush gated community.',
-        imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000',
-        location: 'Financial Dist.',
-        year: 'Handover Ready',
-        projectUrl: 'https://maps.google.com'
-    }
+    // {
+    //     id: 'villa2',
+    //     title: 'The Royal Enclave',
+    //     category: 'Spanish Villas',
+    //     description: 'Classic Spanish-style architecture meets modern luxury. Featuring courtyards, arched windows, and terracotta roofs in a lush gated community.',
+    //     imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?auto=format&fit=crop&q=80&w=1000',
+    //     location: 'Financial Dist.',
+    //     year: 'Handover Ready',
+    //     projectUrl: 'https://maps.google.com'
+    // }
 ];
 
 export const INTERIOR_PROJECTS: Project[] = [

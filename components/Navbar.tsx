@@ -41,9 +41,9 @@ const Navbar: React.FC = () => {
           <a href="#philosophy" className="hover:text-white transition-colors">Vision</a>
           <a href="#contact" className="hover:text-white transition-colors">Inquiry</a>
         </div>
-        <button className="px-6 py-2 border border-[#d4af37]/30 hover:border-[#d4af37] text-[#d4af37] text-xs uppercase tracking-tighter transition-all duration-300">
+        {/*<button className="px-6 py-2 border border-[#d4af37]/30 hover:border-[#d4af37] text-[#d4af37] text-xs uppercase tracking-tighter transition-all duration-300">
           Book View
-        </button>
+        </button>*/}
       </div>
     </nav>
   );
