@@ -19,7 +19,7 @@ const CONSTRUCTION_PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Precision Plots',
-    category: 'Land Banking',
+    category: 'Open spaces',
     description: 'Strategic acquisition of high-appreciation land parcels in premium growth corridors. Our land banks are meticulously vetted for legal clarity, zoning potential, and future connectivity, offering a secure foundation for generational wealth.',
     imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
     location: 'Prime Corridors',
@@ -30,7 +30,7 @@ const CONSTRUCTION_PROJECTS: Project[] = [
     title: 'Bespoke Villas',
     category: 'Luxury Living',
     description: 'Architectural marvels tailored to your persona. From contemporary minimalism to neo-classical grandeur, we construct independent residences that blend seamless indoor-outdoor living with state-of-the-art automation and sustainable design.',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: '/bespoke_villa.png',
     location: 'Gated Communities',
     year: 'Custom'
   }
@@ -48,7 +48,7 @@ const PREMIUM_SERVICES: Project[] = [
   },
   {
     id: '4',
-    title: 'Project Management',
+    title: 'Construction Services',
     category: 'Asset Care',
     description: 'A white-glove service ensuring your asset retains its pristine condition and value. From tenant vetting and lease management to preventative maintenance and concierge services, we handle every detail of your real estate portfolio.',
     imageUrl: '/veridian.png',
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
               <h2 className="text-6xl font-display text-white">Projects</h2>
             </div>
             <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
-              Curated selection of our most ambitious developments across the globe.
+              Curated selection of our most ambitious developments.
             </p>
           </div>
 

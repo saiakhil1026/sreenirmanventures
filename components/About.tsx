@@ -26,8 +26,8 @@ const About: React.FC = () => {
           </h3>
 
           <div className="max-w-3xl mx-auto space-y-8 text-lg text-white/60 font-light leading-relaxed">
-            <p>
-              At <span className="text-white/80 font-medium">SREE NIRMAN VENTURES</span>, we believe that every structure tells a story. For over two decades, we have been the architects of dreams, transforming raw land into luxurious living spaces and commercial landmarks that define skylines.
+            <p>, we believe that every structure tells a story. We have been the architects of dreams, transforming raw land into luxurious living spaces and landmarks that define skylines.
+              At <span className="text-white/80 font-medium">SREE NIRMAN VENTURES</span>
             </p>
 
             <p>
@@ -35,7 +35,7 @@ const About: React.FC = () => {
             </p>
 
             <p>
-              From premium residential villas to towering commercial complexes, every project we undertake is a testament to our dedication to building not just structures, but legacies that endure generations.
+              From premium residential villas to commercial complexes, every project we undertake is a testament to our dedication to building not just structures, but legacies that endure generations.
             </p>
           </div>
         </div>

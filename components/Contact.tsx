@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mb-8"></div>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-            Ready to turn your vision into reality. Reach out and let's discuss about project.
+            We are Ready to turn your vision into reality. Reach out and let's discuss about project.
           </p>
         </div>
 
