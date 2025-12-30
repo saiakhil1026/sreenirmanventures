@@ -39,7 +39,7 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
             break;
         case 'management':
             data = MANAGEMENT_PROJECTS;
-            title = <>Project <span className="italic text-[#d4af37]">Management</span></>;
+            title = <>Construction <span className="italic text-[#d4af37]">Services</span></>;
             subtitle = 'Comprehensive oversight for your valuable assets.';
             break;
         case 'plots':

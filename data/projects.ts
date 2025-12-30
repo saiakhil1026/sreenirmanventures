@@ -122,7 +122,7 @@ export const MANAGEMENT_PROJECTS: Project[] = [
     {
         id: 'm1',
         title: 'Corporate Tower A',
-        category: 'Project Management',
+        category: 'Construction Services',
         description: 'Full-service facility management for a 50-story commercial tower. Includes security, maintenance, and concierge services for MNC tenants.',
         imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
         location: 'Hitech City',

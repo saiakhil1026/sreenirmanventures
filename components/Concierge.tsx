@@ -75,9 +75,9 @@ const Concierge: React.FC = () => {
       {/* Float Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#d4af37] text-black rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300"
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[60] w-12 h-12 md:w-16 md:h-16 bg-[#d4af37] text-black rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
         </svg>
       </button>
