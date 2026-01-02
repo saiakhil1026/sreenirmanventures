@@ -44,7 +44,8 @@ export const PLOTS_PROJECTS: Project[] = [
         imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
         location: 'Vinjanampadu',
         year: 'New Launch',
-        projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
+        projectUrl: 'https://maps.app.goo.gl/6DngSLuxxNjy2hNb7',
+        //projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
         brochureUrl: '/brochure-sample.pdf'
     },
     // {
@@ -79,7 +80,8 @@ export const VILLAS_PROJECTS: Project[] = [
         imageUrl: '/veridian_custom.png',
         location: 'Vinjanampadu',
         year: '2025',
-        projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
+        projectUrl: 'https://maps.app.goo.gl/6DngSLuxxNjy2hNb7',
+        //projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
         brochureUrl: '/brochure-sample.pdf'
     },
     // {
@@ -122,7 +124,7 @@ export const MANAGEMENT_PROJECTS: Project[] = [
     {
         id: 'm1',
         title: 'Corporate Tower A',
-        category: 'Construction Services',
+        category: 'Project Management',
         description: 'Full-service facility management for a 50-story commercial tower. Includes security, maintenance, and concierge services for MNC tenants.',
         imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
         location: 'Hitech City',

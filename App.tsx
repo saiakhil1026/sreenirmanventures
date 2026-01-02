@@ -49,8 +49,8 @@ const PREMIUM_SERVICES: Project[] = [
   {
     id: '4',
     title: 'Construction Services',
-    category: 'Asset Care',
-    description: 'A white-glove service ensuring your asset retains its pristine condition and value. From tenant vetting and lease management to preventative maintenance and concierge services, we handle every detail of your real estate portfolio.',
+    category: 'Build your dream house',
+    description: 'We understand that every house is a reflection of its owner. Our construction services are designed to bring your vision to life, ensuring every detail is executed with precision and care.',
     imageUrl: '/veridian.png',
     location: '',
     year: ''

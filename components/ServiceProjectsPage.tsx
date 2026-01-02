@@ -40,7 +40,7 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
         case 'management':
             data = MANAGEMENT_PROJECTS;
             title = <>Construction <span className="italic text-[#d4af37]">Services</span></>;
-            subtitle = 'Comprehensive oversight for your valuable assets.';
+            subtitle = 'Build your dream house with our construction services.';
             break;
         case 'plots':
             data = PLOTS_PROJECTS;
@@ -79,7 +79,7 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                     {title}
                 </h1>
                 <p className="text-white/40 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-100">
-                    {subtitle} Explore our current and upcoming projects.
+                    {subtitle} .
                 </p>
             </div>
 

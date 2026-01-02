@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mb-8"></div>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-            We are Ready to turn your vision into reality. Reach out and let's discuss about project.
+            We are ready to turn your vision into reality. Reach out and let's discuss about project.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="pt-2">
                     <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-3 font-semibold">Phone</p>
-                    <a href="tel:+918688637899" className="block text-white text-xl font-display tracking-wide hover:text-[#d4af37] transition-colors duration-300">
+                    <a href="tel:+918688637899" className="block text-white text-xl font-light tracking-wide hover:text-[#d4af37] transition-colors duration-300">
                       +91 86886 37899
                     </a>
                   </div>
@@ -126,9 +126,21 @@ const Contact: React.FC = () => {
                 Working Hours
               </h4>
               <ul className="space-y-4 text-white/60 font-light tracking-wide text-sm">
-                <li className="flex justify-between border-b border-white/5 pb-2"><span>Sunday - Saturday</span> <span className="text-white">10:00 AM - 6:00 PM</span></li>
+                <li className="flex justify-between items-center border-b border-white/5 pb-2">
+                  <div className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]/40"></span>
+                    <span>Sunday - Saturday</span>
+                  </div>
+                  <span className="text-white">10:00 AM - 6:00 PM</span>
+                </li>
                 {/* <li className="flex justify-between border-b border-white/5 pb-2"><span>Saturday</span> <span className="text-white">10:00 AM - 4:00 PM</span></li> */}
-                <li className="flex justify-between"><span>Tuesday</span> <span className="text-[#d4af37] italic">By Appointment Only</span></li>
+                <li className="flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]/40"></span>
+                    <span>Tuesday</span>
+                  </div>
+                  <span className="text-[#d4af37] italic">By Appointment Only</span>
+                </li>
               </ul>
             </div>
           </div>
