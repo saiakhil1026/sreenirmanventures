@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { CONTACT_EMAIL } from '../constants';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,10 @@ const Contact: React.FC = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [smsConsent, setSmsConsent] = useState(false);
+
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -17,7 +22,7 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleRequestConsultation = (e: React.FormEvent) => {
+  const handleRequestConsultation = async (e: React.FormEvent) => {
     e.preventDefault();
     const { name, email, phone, message } = formData;
 
@@ -26,12 +31,36 @@ const Contact: React.FC = () => {
       return;
     }
 
-    const subject = encodeURIComponent(`New Consultation Request from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-    );
+    if (!smsConsent) {
+      alert("Please agree to the terms and authorize notifications to proceed.");
+      return;
+    }
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing in .env file');
+      }
+
+      await emailjs.send(serviceId, templateId, formData, publicKey);
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setSmsConsent(false);
+      // alert("Message sent successfully!");
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+      // alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses = (fieldName: string) => `w-full bg-[#111] border py-4 px-6 text-white font-light placeholder:text-white/20 transition-all duration-500 outline-none
@@ -210,15 +239,47 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
+              {/* Disclaimer and Consent */}
+              <div className="space-y-4">
+                <p className="text-white/60 text-xs leading-relaxed">
+                  By clicking Submit Request, you agree to our <span className="text-[#d4af37]">Terms of Service</span> and that you have read our <span className="text-[#d4af37]">Privacy Policy</span>
+                </p>
+                <div className="flex items-start gap-3">
+                  <div className="relative flex items-center pt-1">
+                    <input
+                      type="checkbox"
+                      id="smsConsent"
+                      checked={smsConsent}
+                      onChange={(e) => setSmsConsent(e.target.checked)}
+                      className="peer h-4 w-4 appearance-none border border-white/20 bg-transparent checked:border-[#d4af37] checked:bg-[#d4af37] transition-all cursor-pointer rounded-sm"
+                    />
+                    <svg className="absolute w-3 h-3 text-black pointer-events-none opacity-0 peer-checked:opacity-100 left-0.5 top-1.5 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <label htmlFor="smsConsent" className="text-white/60 text-xs cursor-pointer select-none">
+                    I hereby authorize to send notification on SMS/Messages/Promotional/Informational messages <span className="text-red-500">*</span>
+                  </label>
+                </div>
+              </div>
+
               <button
                 type="submit"
-                className="group relative w-full py-5 bg-[#d4af37] text-black overflow-hidden mt-4"
+                disabled={isSubmitting}
+                className={`group relative w-full py-5 bg-[#d4af37] text-black overflow-hidden mt-4 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 <div className="absolute inset-0 w-0 bg-white transition-all duration-[250ms] ease-out group-hover:w-full opacity-20"></div>
                 <span className="relative text-xs font-bold uppercase tracking-[0.4em] group-hover:tracking-[0.5em] transition-all duration-300">
-                  Request Consultation
+                  {isSubmitting ? 'Sending...' : 'Request Consultation'}
                 </span>
               </button>
+
+              {submitStatus === 'success' && (
+                <p className="text-green-500 text-sm text-center mt-2 tracking-wide">Message sent successfully! We will contact you soon.</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="text-red-500 text-sm text-center mt-2 tracking-wide">Failed to send message. Please try again later.</p>
+              )}
             </form>
           </div>
         </div>

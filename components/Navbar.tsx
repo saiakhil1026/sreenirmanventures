@@ -18,16 +18,16 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { name: 'Origins', href: '#hero' },
-    { name: 'Legacy', href: '#about' },
-    { name: 'Projects', href: '#our-projects' },
-    { name: 'Services', href: '#our-services' },
-    { name: 'Vision', href: '#philosophy' },
-    { name: 'Inquiry', href: '#contact' },
+    { name: 'Origins', href: '/#hero' },
+    { name: 'Legacy', href: '/#about' },
+    { name: 'Projects', href: '/#our-projects' },
+    { name: 'Services', href: '/#our-services' },
+    { name: 'Vision', href: '/#philosophy' },
+    { name: 'Inquiry', href: '/#contact' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'glass-nav py-4' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'glass-nav py-4' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         <div
           className="flex items-center gap-3 cursor-pointer z-50 relative"

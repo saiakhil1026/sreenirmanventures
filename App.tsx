@@ -111,9 +111,9 @@ const Home: React.FC = () => {
               <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block">Our Expertise</span>
               <h2 className="text-6xl font-display text-white">Projects</h2>
             </div>
-            <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
+            {/* <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
               Curated selection of our most ambitious developments.
-            </p>
+            </p> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-24">
@@ -133,9 +133,9 @@ const Home: React.FC = () => {
               <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block">Exclusive Care</span>
               <h2 className="text-6xl font-display text-white">Services</h2>
             </div>
-            <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
+            {/* <p className="text-white/40 text-sm md:max-w-xs mt-6 md:mt-0 leading-relaxed">
               Comprehensive lifestyle and asset management solutions.
-            </p>
+            </p> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
