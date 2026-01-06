@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import ProjectCard from './components/ProjectCard';
 import Contact from './components/Contact';
-import Concierge from './components/Concierge';
+
 import WhatsAppButton from './components/WhatsAppButton';
 import ProjectsPage from './components/ProjectsPage';
 import ServiceProjectsPage from './components/ServiceProjectsPage';
@@ -193,7 +193,7 @@ const Home: React.FC = () => {
         </div>
       </footer>
 
-      <Concierge />
+
       <WhatsAppButton />
     </div>
   );
