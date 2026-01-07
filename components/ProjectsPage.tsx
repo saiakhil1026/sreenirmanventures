@@ -81,7 +81,7 @@ const ProjectsPage: React.FC = () => {
                         </a>
                     </div>
                     <p className="text-white/20 text-[10px] uppercase tracking-widest">
-                        © 2024 Sree Nirman Ventures. All Rights Reserved.
+                        © 2026 Sree Nirman Ventures. All Rights Reserved.
                     </p>
                 </div>
             </footer>
