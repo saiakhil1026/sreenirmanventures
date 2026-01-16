@@ -24,7 +24,7 @@ const MaterialDetailsModal: React.FC<MaterialDetailsModalProps> = ({ isOpen, onC
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-[300] flex items-center justify-center px-4">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300"
@@ -105,7 +105,7 @@ const MaterialDetailsModal: React.FC<MaterialDetailsModalProps> = ({ isOpen, onC
 };
 
 const MaterialSection: React.FC<{ title: string; items: string[]; fullWidth?: boolean }> = ({ title, items, fullWidth }) => (
-    <div className={`space-y-3 ${fullWidth ? 'col-span-1 md:col-span-2' : ''}`}>
+    <div className={`bg-white/5 rounded-xl p-6 border border-white/5 space-y-3 ${fullWidth ? 'col-span-1 md:col-span-2' : ''}`}>
         <h4 className="text-[#d4af37] text-sm uppercase tracking-widest font-bold border-b border-white/10 pb-2">{title}</h4>
         <div className="space-y-2">
             {items.map((item, idx) => (

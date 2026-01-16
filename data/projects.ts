@@ -8,7 +8,7 @@ export const REAL_PROJECTS: Project[] = [
         description: 'Iconic skyline presence. 45 stories of ultra-luxury residences featuring panoramic city views, private sky decks, and world-class amenities.',
         imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3d272947?auto=format&fit=crop&q=80&w=1000',
         location: 'Financial District',
-        year: '2024',
+        year: '2026',
         projectUrl: 'https://maps.google.com',
         brochureUrl: '/brochure-sample.pdf'
     },

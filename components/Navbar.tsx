@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setIsMobileMenuOpen(!isMobileMenuOpen);
     }
   };
@@ -76,13 +76,13 @@ const Navbar: React.FC = () => {
               </defs>
             </svg>
           </div>
-          <div className="text-lg md:text-2xl font-display font-bold tracking-widest gold-gradient uppercase">
+          <div className="text-lg md:text-xl lg:text-2xl font-display font-bold tracking-widest gold-gradient uppercase whitespace-nowrap">
             SREE NIRMAN VENTURES
           </div>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 lg:space-x-12 text-sm uppercase tracking-widest font-medium text-white/70">
+        <div className="hidden lg:flex space-x-8 xl:space-x-12 text-sm uppercase tracking-widest font-medium text-white/70">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu Content */}
         <div
           ref={menuRef}
-          className={`absolute top-full left-6 mt-2 w-64 bg-gradient-to-b from-neutral-900/95 to-black/95 backdrop-blur-2xl z-40 rounded-xl border border-[#d4af37]/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-300 origin-top-left md:hidden ${isMobileMenuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
+          className={`absolute top-full left-6 mt-2 w-64 bg-gradient-to-b from-neutral-900/95 to-black/95 backdrop-blur-2xl z-40 rounded-xl border border-[#d4af37]/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-300 origin-top-left lg:hidden ${isMobileMenuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
         >
           <div className="flex flex-col py-2">
             {navLinks.map((link) => (
