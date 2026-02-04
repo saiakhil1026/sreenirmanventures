@@ -42,7 +42,7 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
 
             {/* Modal Content */}
             <div
-                className={`relative w-full max-w-5xl h-[85vh] bg-[#0a0a0a] border border-white/10 flex flex-col shadow-2xl transform transition-all duration-500 ${isVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}
+                className={`relative w-[95%] sm:w-full max-w-5xl h-[80vh] md:h-[85vh] bg-[#0a0a0a] border border-white/10 flex flex-col shadow-2xl transform transition-all duration-500 ${isVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}
             >
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/5 bg-[#111]">
@@ -62,7 +62,7 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
                             className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-[#d4af37] hover:text-white transition-colors"
                         >
                             <Download className="w-4 h-4" />
-                            Download PDF
+                            Download Brochure
                         </a>
                         <button
                             onClick={onClose}
@@ -74,13 +74,21 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
                 </div>
 
                 {/* PDF Viewer / Content Area */}
-                <div className="flex-1 bg-[#050505] relative w-full h-full">
+                <div className="flex-1 bg-[#050505] relative w-full h-full flex items-center justify-center p-4">
                     {project.brochureUrl ? (
-                        <iframe
-                            src={project.brochureUrl}
-                            className="w-full h-full border-none"
-                            title={`${project.title} Brochure`}
-                        />
+                        project.brochureUrl.match(/\.(jpeg|jpg|gif|png)$/i) ? (
+                            <img
+                                src={project.brochureUrl}
+                                alt={`${project.title} Brochure`}
+                                className="max-w-full max-h-full object-contain shadow-2xl"
+                            />
+                        ) : (
+                            <iframe
+                                src={project.brochureUrl}
+                                className="w-full h-full border-none"
+                                title={`${project.title} Brochure`}
+                            />
+                        )
                     ) : (
                         <div className="flex flex-col items-center justify-center h-full text-white/30">
                             <FileText className="w-16 h-16 mb-4 opacity-50" />
@@ -89,7 +97,7 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
                     )}
                 </div>
             </div>
-        </div>,
+        </div >,
         document.body
     );
 };

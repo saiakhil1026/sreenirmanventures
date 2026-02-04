@@ -32,7 +32,7 @@ const MaterialDetailsModal: React.FC<MaterialDetailsModalProps> = ({ isOpen, onC
             />
 
             {/* Modal Content */}
-            <div className="relative w-full max-w-2xl bg-[#0f0f0f] border border-[#d4af37]/20 rounded-2xl shadow-[0_0_50px_rgba(212,175,55,0.15)] overflow-hidden animate-fade-in-up">
+            <div className="relative w-[95%] sm:w-full max-w-2xl bg-[#0f0f0f] border border-[#d4af37]/20 rounded-2xl shadow-[0_0_50px_rgba(212,175,55,0.15)] overflow-hidden animate-fade-in-up max-h-[85vh] flex flex-col">
 
                 {/* Header */}
                 <div className="p-6 border-b border-white/10 flex justify-between items-center bg-[#151515]">
@@ -51,7 +51,7 @@ const MaterialDetailsModal: React.FC<MaterialDetailsModalProps> = ({ isOpen, onC
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="p-8 max-h-[70vh] overflow-y-auto custom-scrollbar">
+                <div className="p-4 md:p-8 overflow-y-auto custom-scrollbar flex-1">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                         <MaterialSection title="Cement" items={materials.cements} />

@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="group relative overflow-hidden bg-[#111] border border-white/5 h-[600px] cursor-pointer">
+    <div className="group relative overflow-hidden bg-[#111] border border-white/5 h-[400px] md:h-[500px] lg:h-[600px] cursor-pointer rounded-2xl">
       <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
         <img
           src={project.imageUrl}
@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 p-8 w-full md:w-3/4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500 z-10">
+      <div className="absolute bottom-0 left-0 p-8 w-full md:w-3/4 z-10">
         <span className="text-[#d4af37] text-xs uppercase tracking-widest mb-2 block">
           {project.category}
         </span>

@@ -88,6 +88,16 @@ const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               className="hover:text-white transition-colors"
+              onClick={(e) => {
+                if (window.location.pathname === '/' && link.href.startsWith('/#')) {
+                  e.preventDefault();
+                  const targetId = link.href.substring(2);
+                  const elem = document.getElementById(targetId);
+                  if (elem) {
+                    elem.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
             >
               {link.name}
             </a>
@@ -105,7 +115,17 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 href={link.href}
                 className="px-6 py-4 text-sm font-display text-white/80 hover:text-[#d4af37] hover:bg-white/5 tracking-[0.2em] uppercase transition-all duration-300 border-b border-white/5 last:border-0"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  if (window.location.pathname === '/' && link.href.startsWith('/#')) {
+                    e.preventDefault();
+                    const targetId = link.href.substring(2);
+                    const elem = document.getElementById(targetId);
+                    if (elem) {
+                      elem.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
               >
                 {link.name}
               </a>

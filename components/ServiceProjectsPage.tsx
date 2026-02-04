@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import Navbar from './Navbar';
 import RealEstateProjectCard from './RealEstateProjectCard';
 import Contact from './Contact';
@@ -15,7 +15,7 @@ interface ServiceProjectsPageProps {
 }
 
 const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, [type]);
 
@@ -65,21 +65,24 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
             <Navbar />
 
             {/* Back Navigation */}
-            <div className="pt-32 px-6 max-w-7xl mx-auto">
-                <Link to={backLink} className="inline-flex items-center gap-2 text-[#d4af37] hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs">
-                    <ArrowLeft className="w-4 h-4" />
+            <div className="pt-24 px-6 max-w-7xl mx-auto">
+                <Link
+                    to={backLink}
+                    className="inline-flex items-center gap-3 px-6 py-3 border border-[#d4af37]/50 rounded-full text-[#d4af37] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#d4af37] hover:text-black hover:border-transparent transition-all duration-300 group"
+                >
+                    <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                     <span>Back to Home</span>
                 </Link>
             </div>
 
             {/* Header */}
-            <div className="pt-10 pb-20 px-6 text-center">
-                <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block animate-fade-in">Our Portfolio</span>
-                <h1 className="text-5xl md:text-7xl font-display text-white mb-8 animate-fade-in-up">
+            <div className="py-8 px-6 text-center">
+                <span className="text-[#d4af37] text-sm uppercase tracking-[0.4em] mb-4 block">Our Portfolio</span>
+                <h1 className="text-5xl md:text-7xl font-display text-white mb-6">
                     {title}
                 </h1>
-                <p className="text-white/40 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-100">
-                    {subtitle} .
+                <p className="text-white/40 max-w-2xl mx-auto leading-relaxed">
+                    {subtitle}
                 </p>
             </div>
 
@@ -255,7 +258,7 @@ const ServiceProjectsPage: React.FC<ServiceProjectsPageProps> = ({ type }) => {
                 </div>
             </footer>
 
-            <Concierge />
+
             <WhatsAppButton />
         </div>
     );

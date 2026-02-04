@@ -13,7 +13,7 @@ const RealEstateProjectCard: React.FC<RealEstateProjectCardProps> = ({ project, 
 
     return (
         <>
-            <div className="group relative bg-[#111] border border-white/5 overflow-hidden transition-all duration-500 hover:border-[#d4af37]/30">
+            <div className="group relative bg-[#111] border border-white/5 overflow-hidden transition-all duration-500 hover:border-[#d4af37]/30 rounded-2xl">
                 {/* Image Container - Opens Brochure Modal */}
                 <div
                     onClick={() => setIsModalOpen(true)}

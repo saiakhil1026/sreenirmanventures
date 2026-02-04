@@ -10,7 +10,7 @@ export const REAL_PROJECTS: Project[] = [
         location: 'Financial District',
         year: '2026',
         projectUrl: 'https://maps.google.com',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_construction.png'
     },
     {
         id: 'p2',
@@ -21,7 +21,7 @@ export const REAL_PROJECTS: Project[] = [
         location: 'West Corridor',
         year: 'New Launch',
         projectUrl: 'https://maps.google.com',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_villas.png'
     },
     {
         id: 'p3',
@@ -31,7 +31,8 @@ export const REAL_PROJECTS: Project[] = [
         imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
         location: 'Tech Hub',
         year: 'New Launch',
-        projectUrl: 'https://maps.google.com'
+        projectUrl: 'https://maps.google.com',
+        brochureUrl: '/brochures/brochure_construction.png'
     }
 ];
 
@@ -46,7 +47,7 @@ export const PLOTS_PROJECTS: Project[] = [
         year: 'New Launch',
         projectUrl: 'https://maps.app.goo.gl/6DngSLuxxNjy2hNb7',
         //projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_plots.png'
     },
     // {
     //     id: 'plot2',
@@ -82,7 +83,7 @@ export const VILLAS_PROJECTS: Project[] = [
         year: 'New Launch',
         projectUrl: 'https://maps.app.goo.gl/6DngSLuxxNjy2hNb7',
         //projectUrl: 'https://www.google.com/maps/place/Vinjanampadu,+Andhra+Pradesh+522017/@16.2454199,80.4267217,3a,75y,107.71h,96.47t/data=!3m7!1e1!3m5!1st6DecwMo_MMBXIcvsbD07Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-6.474917566709621%26panoid%3Dt6DecwMo_MMBXIcvsbD07Q%26yaw%3D107.7116573936582!7i16384!8i8192!4m6!3m5!1s0x3a4a7491281164bd:0x6bee823f65fd5fea!8m2!3d16.2392278!4d80.4275338!16s%2Fm%2F011jkzs0?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_villas.png'
     },
     // {
     //     id: 'villa2',
@@ -106,7 +107,7 @@ export const INTERIOR_PROJECTS: Project[] = [
         location: 'Jubilee Hills',
         year: 'Demo',
         projectUrl: 'https://maps.google.com',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_interior.png'
     },
     {
         id: 'i2',
@@ -130,7 +131,7 @@ export const MANAGEMENT_PROJECTS: Project[] = [
         location: 'Hitech City',
         year: 'Active',
         projectUrl: 'https://maps.google.com',
-        brochureUrl: '/brochure-sample.pdf'
+        brochureUrl: '/brochures/brochure_construction.png'
     },
     {
         id: 'm2',

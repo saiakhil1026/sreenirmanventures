@@ -39,7 +39,7 @@ const ManagementTierCard: React.FC<ManagementTierProps> = ({
 
     return (
         <div
-            className={`relative group p-[1px] rounded-2xl transition-all duration-500 hover:scale-105 animate-fade-in-up`}
+            className={`relative group p-[1px] rounded-2xl transition-all duration-500 hover:scale-105`}
             style={{ animationDelay: `${delay}ms` }}
         >
             {/* Gradient Border Background */}

@@ -87,7 +87,7 @@ const Home: React.FC = () => {
             <img
               src="/philosophy.png"
               alt="SREE NIRMAN VENTURES Philosophy"
-              className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-[400px] lg:h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </div>
           <div className="space-y-8">
