@@ -32,7 +32,7 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
 
     return createPortal(
         <div
-            className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 sm:p-6 transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
         >
             {/* Backdrop */}
             <div
@@ -42,10 +42,10 @@ const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose, project 
 
             {/* Modal Content */}
             <div
-                className={`relative w-[95%] sm:w-full max-w-5xl h-[80vh] md:h-[85vh] bg-[#0a0a0a] border border-white/10 flex flex-col shadow-2xl transform transition-all duration-500 ${isVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}
+                className={`relative w-[95%] sm:w-full max-w-5xl h-[90vh] md:h-[85vh] bg-[#0a0a0a] border border-white/10 flex flex-col shadow-2xl transform transition-all duration-500 ${isVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-10'}`}
             >
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-white/5 bg-[#111]">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/5 bg-[#111]">
                     <div className="flex items-center gap-4">
                         <div className="p-2 bg-white/5 rounded-full">
                             <FileText className="w-5 h-5 text-[#d4af37]" />
